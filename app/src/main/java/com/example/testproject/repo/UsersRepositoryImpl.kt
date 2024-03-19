@@ -9,7 +9,6 @@ import javax.inject.Inject
 
 class UsersRepositoryImpl @Inject constructor() : UsersRepository {
 
-
     override fun getUsersList(): Single<List<UserLightVersion>> {
         return RetrofitObject.usersService.getUsersList()
     }

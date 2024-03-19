@@ -7,6 +7,6 @@ import com.example.testproject.R
 
 class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    val name = itemView.findViewById<TextView>(R.id.rv_tv_full_name)
-    val username = itemView.findViewById<TextView>(R.id.rv_tv_username)
+    val name: TextView = itemView.findViewById(R.id.rv_tv_full_name)
+    val username: TextView = itemView.findViewById(R.id.rv_tv_username)
 }

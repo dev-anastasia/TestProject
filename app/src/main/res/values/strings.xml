@@ -7,11 +7,7 @@
     <string name="plain_text_lat">N:</string>
     <string name="plain_text_lng">E:</string>
     <string name="plain_text_contacts">Контакты</string>
-    <string name="plain_text_web">Сайт:</string>
     <string name="plain_text_company">Место работы</string>
-    <string name="plain_text_comp_name">Название:</string>
-    <string name="plain_text_comp_catch">Девиз:</string>
-    <string name="plain_text_comp_bs">Обязанности:</string>
     <string name="plain_text_id">Id:</string>
     <string name="plain_text_user_main_info">Информация о пользователе</string>
 </resources>
