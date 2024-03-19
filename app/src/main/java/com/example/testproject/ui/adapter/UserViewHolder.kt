@@ -1,8 +1,9 @@
-package com.example.testproject
+package com.example.testproject.ui.adapter
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.testproject.R
 
 class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

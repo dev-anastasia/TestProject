@@ -46,17 +46,21 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // VM
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.fragment:fragment-ktx:1.6.2")
-
     // RxJava
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
-    implementation("androidx.room:room-rxjava2:2.6.1")
+
+    // Retrofit
+    val retrofitVersion = "2.10.0"
+    implementation("com.squareup.retrofit2:retrofit:${retrofitVersion}")
+    implementation("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}")
+    val httpVersion = "4.7.2"
+    implementation("com.squareup.okhttp3:logging-interceptor:$httpVersion")
+    implementation("com.squareup.okhttp3:okhttp:$httpVersion")
 
     // Dagger
     implementation("com.google.dagger:dagger:2.49")
     implementation("com.google.dagger:dagger-android:2.16")
-    kapt("com.google.dagger:dagger-android-processor:2.16")
     kapt("com.google.dagger:dagger-compiler:2.49")
+    kapt("com.google.dagger:dagger-android-processor:2.16")
 }

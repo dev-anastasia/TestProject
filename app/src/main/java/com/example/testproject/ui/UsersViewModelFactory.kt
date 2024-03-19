@@ -1,9 +1,12 @@
-package com.example.testproject
+package com.example.testproject.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.testproject.UsersRepository
+import javax.inject.Inject
 
-class UsersViewModelFactory(private val repo: UsersRepository) : ViewModelProvider.Factory { // @Inject constructor
+class UsersViewModelFactory @Inject constructor(private val repo: UsersRepository) :
+    ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

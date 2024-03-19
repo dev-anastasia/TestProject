@@ -24,7 +24,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/plain_text_user_main_info"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -35,7 +36,7 @@
             tools:text="Leanne Graham" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -44,7 +45,8 @@
                 style="@style/PlainText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plain_text_username" />
+                android:text="@string/plain_text_username"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_username"
@@ -58,33 +60,45 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/plain_text_id"
                 style="@style/PlainText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plain_text_id" />
+                android:text="@string/plain_text_id"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_user_id"
                 style="@style/UserInfoText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:text="12345" />
 
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/info_fr_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:visibility="gone" />
+
         <TextView
-            android:id="@+id/plain_text_tel"
+            android:id="@+id/plain_text_contacts"
             style="@style/PlainText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/plain_text_contacts"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_email"
@@ -94,7 +108,7 @@
             tools:text="Sincere@april.biz" />
 
         <TextView
-            android:id="@+id/tv_tel"
+            android:id="@+id/tv_phone"
             style="@style/UserInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -115,7 +129,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/plain_text_address"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_str"
@@ -125,7 +140,7 @@
             tools:text="Kulas Light" />
 
         <TextView
-            android:id="@+id/tv_ap"
+            android:id="@+id/tv_suite"
             style="@style/UserInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -146,7 +161,7 @@
             tools:text="92998-3874" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
@@ -156,7 +171,8 @@
                 style="@style/PlainText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plain_text_lat" />
+                android:text="@string/plain_text_lat"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_lat"
@@ -168,7 +184,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -177,7 +193,8 @@
                 style="@style/PlainText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plain_text_lng" />
+                android:text="@string/plain_text_lng"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_lng"
@@ -189,14 +206,15 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/plain_text_comp"
+            android:id="@+id/plain_text_job"
             style="@style/PlainText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="@string/plain_text_company"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_comp_name"
@@ -206,49 +224,24 @@
             android:textStyle="bold"
             tools:text="Romaguera-Crona" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/tv_comp_catch"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:gravity="start"
+            android:textStyle="italic"
+            tools:text="Multi-layered client-server neural-net" />
 
-            <TextView
-                android:id="@+id/plain_text_comp_catch"
-                style="@style/PlainText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plain_text_comp_catch" />
-
-            <TextView
-                android:id="@+id/tv_comp_catch"
-                style="@style/UserInfoText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                tools:text="Multi-layered client-server neural-net" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/plain_text_comp_bs"
-                style="@style/PlainText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plain_text_comp_bs" />
-
-            <TextView
-                android:id="@+id/tv_comp_bs"
-                style="@style/UserInfoText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:breakStrategy="balanced"
-                android:singleLine="false"
-                tools:text="harness real-time e-markets" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_comp_bs"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:breakStrategy="balanced"
+            android:singleLine="false"
+            tools:text="harness real-time e-markets" />
 
     </LinearLayout>
 

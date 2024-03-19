@@ -11,4 +11,12 @@
         android:layout_height="wrap_content"
         tools:listitem="@layout/list_item_view" />
 
+    <ProgressBar
+        android:id="@+id/list_fr_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:visibility="gone" />
+
 </FrameLayout>

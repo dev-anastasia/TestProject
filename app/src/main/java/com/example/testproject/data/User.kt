@@ -5,9 +5,8 @@ data class User(
     val name: String,
     val username: String,
     val email: String,
-    val address: List<UserAddress>,
-    val geo: List<UserGeo>,
+    val address: UserAddress,
     val phone: String,
     val website: String,
-    val company: List<UserCompany>
+    val company: UserCompany
 )

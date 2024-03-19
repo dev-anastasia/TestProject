@@ -1,18 +1,18 @@
-package com.example.testproject.adapter
+package com.example.testproject.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testproject.R
-import com.example.testproject.UserViewHolder
-import com.example.testproject.data.User
+import com.example.testproject.data.UserLightVersion
 
-class UsersAdapter : RecyclerView.Adapter<UserViewHolder>() {
+class UsersAdapter(private val clickListener: ClickListener) :
+    RecyclerView.Adapter<UserViewHolder>() {
 
-    private val list = mutableListOf<User>()
+    private val list = mutableListOf<UserLightVersion>()
 
-    fun updateList(newList: List<User>) {
+    fun updateList(newList: List<UserLightVersion>) {
         val diffCallback = UserDiffUtil(list, newList)
         val result = DiffUtil.calculateDiff(diffCallback)
         list.clear()
@@ -31,5 +31,9 @@ class UsersAdapter : RecyclerView.Adapter<UserViewHolder>() {
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.name.text = list[position].name
         holder.username.text = list[position].username
+
+        holder.itemView.setOnClickListener {
+            clickListener.onUserClicked(list[position].id)
+        }
     }
 }
