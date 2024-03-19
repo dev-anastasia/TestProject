@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TestProject" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blueish</item>
+    </style>
+
+    <style name="Theme.TestProject" parent="Base.Theme.TestProject" />
+
+    <style name="PlainText" parent="Theme.Design.Light.NoActionBar" >
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:paddingEnd">8dp</item>
+
+    </style>
+
+    <style name="UserInfoText" parent="Theme.Design.Light.NoActionBar" >
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

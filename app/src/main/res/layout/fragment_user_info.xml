@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/plain_text_user_main_info"
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/plain_text_user_main_info"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            tools:text="Leanne Graham" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/PlainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plain_text_username" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                style="@style/UserInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:breakStrategy="balanced"
+                android:textStyle="bold"
+                tools:text="Bret" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/PlainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plain_text_id" />
+
+            <TextView
+                android:id="@+id/tv_user_id"
+                style="@style/UserInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="12345" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/plain_text_contacts"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Sincere@april.biz" />
+
+        <TextView
+            android:id="@+id/tv_tel"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1-770-736-8031 x56442" />
+
+        <TextView
+            android:id="@+id/tv_web"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="hildegard.org" />
+
+        <TextView
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/plain_text_address"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/tv_str"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Kulas Light" />
+
+        <TextView
+            android:id="@+id/tv_ap"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Apt. 556" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Gwenborough" />
+
+        <TextView
+            android:id="@+id/tv_zip"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="92998-3874" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/PlainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plain_text_lat" />
+
+            <TextView
+                android:id="@+id/tv_lat"
+                style="@style/UserInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="-37.3159" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/PlainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plain_text_lng" />
+
+            <TextView
+                android:id="@+id/tv_lng"
+                style="@style/UserInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="81.1496" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/plain_text_company"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/tv_comp_name"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            tools:text="Romaguera-Crona" />
+
+        <TextView
+            android:id="@+id/tv_comp_catch"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textStyle="italic"
+            tools:text="Multi-layered client-server neural-net" />
+
+        <TextView
+            android:id="@+id/tv_comp_bs"
+            style="@style/UserInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:breakStrategy="balanced"
+            android:singleLine="false"
+            tools:text="harness real-time e-markets" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
