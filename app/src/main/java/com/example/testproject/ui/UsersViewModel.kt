@@ -12,9 +12,9 @@ import javax.inject.Inject
 
 class UsersViewModel @Inject constructor(private val repo: UsersRepository) : ViewModel() {
 
-    val uiState: LiveData<UsersUIState>
+    val fragmentsUIState: LiveData<FragmentsUIState>
         get() = _uiState
-    private val _uiState = MutableLiveData<UsersUIState>()
+    private val _uiState = MutableLiveData<FragmentsUIState>()
 
     val usersList: List<UserLightVersion>
         get() = _usersList
@@ -25,7 +25,7 @@ class UsersViewModel @Inject constructor(private val repo: UsersRepository) : Vi
     private var _currentUser: User? = null
 
     fun getUsersList() {
-        _uiState.postValue(UsersUIState.Loading)
+        _uiState.postValue(FragmentsUIState.Loading)
 
         repo.getUsersList()
             .subscribeOn(Schedulers.io())
@@ -35,16 +35,16 @@ class UsersViewModel @Inject constructor(private val repo: UsersRepository) : Vi
                         clear()
                         addAll(list)
                     }
-                    _uiState.postValue(UsersUIState.Success)
+                    _uiState.postValue(FragmentsUIState.Success)
                 },
                 { error ->
-                    _uiState.postValue(UsersUIState.Error)
+                    _uiState.postValue(FragmentsUIState.Error)
                     Log.e("RxJava", error.toString())
                 })
     }
 
     fun getUserInfo(id: Long) {
-        _uiState.postValue(UsersUIState.Loading)
+        _uiState.postValue(FragmentsUIState.Loading)
 
         repo.getUserInfo(id)
             .subscribeOn(Schedulers.io())
@@ -52,14 +52,14 @@ class UsersViewModel @Inject constructor(private val repo: UsersRepository) : Vi
                 { list ->
                     if (list != null) {
                         _currentUser = list[0]
-                        _uiState.postValue(UsersUIState.Success)
+                        _uiState.postValue(FragmentsUIState.Success)
                     } else {
-                        _uiState.postValue(UsersUIState.Error)
+                        _uiState.postValue(FragmentsUIState.Error)
                         Log.e("RxJava", "user = null")
                     }
                 },
                 { error ->
-                    _uiState.postValue(UsersUIState.Error)
+                    _uiState.postValue(FragmentsUIState.Error)
                     Log.e("RxJava", error.toString())
                 })
     }

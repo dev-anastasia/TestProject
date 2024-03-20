@@ -9,13 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.testproject.MainActivity.Companion.INFO_FR_TAG
 import com.example.testproject.R
-import com.example.testproject.ui.adapter.ClickListener
-import com.example.testproject.ui.adapter.UsersAdapter
 import com.example.testproject.application.component
-import com.example.testproject.ui.UsersUIState
+import com.example.testproject.ui.FragmentsUIState
 import com.example.testproject.ui.UsersViewModel
 import com.example.testproject.ui.UsersViewModelFactory
+import com.example.testproject.ui.adapter.ClickListener
+import com.example.testproject.ui.adapter.UsersAdapter
 import javax.inject.Inject
 
 class ListFragment : Fragment(R.layout.fragment_list), ClickListener {
@@ -43,28 +44,30 @@ class ListFragment : Fragment(R.layout.fragment_list), ClickListener {
 
         val progressBar = requireActivity().findViewById<ProgressBar>(R.id.list_fr_progress_bar)
 
-        vm.uiState.observe(viewLifecycleOwner) {
+        vm.fragmentsUIState.observe(viewLifecycleOwner) {
             when (it) {
 
-                UsersUIState.Loading -> {
+                FragmentsUIState.Loading -> {
                     progressBar.visibility = View.VISIBLE
                 }
 
-                UsersUIState.Success -> {
+                FragmentsUIState.Success -> {
                     adapter.updateList(vm.usersList)
                     progressBar.visibility = View.GONE
                 }
 
-                UsersUIState.Error -> {
+                FragmentsUIState.Error -> {
                     progressBar.visibility = View.GONE
                     Toast.makeText(
-                        requireContext(), UsersUIState.Error.listErrorMessage, Toast.LENGTH_SHORT
+                        requireContext(),
+                        FragmentsUIState.Error.listErrorMessage,
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
             }
         }
 
-        if (vm.uiState.value == null) {
+        if (vm.fragmentsUIState.value == null) {
             vm.getUsersList()
         }
     }
@@ -73,7 +76,7 @@ class ListFragment : Fragment(R.layout.fragment_list), ClickListener {
         vm.getUserInfo(userId)
 
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, UserInfoFragment())
+            .replace(R.id.fragment_container, UserInfoFragment(), INFO_FR_TAG)
             .addToBackStack("added UserInfoFragment")
             .setReorderingAllowed(true)
             .commit()

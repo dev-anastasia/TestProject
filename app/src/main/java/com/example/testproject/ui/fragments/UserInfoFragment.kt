@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.testproject.R
 import com.example.testproject.application.component
 import com.example.testproject.data.User
-import com.example.testproject.ui.UsersUIState
+import com.example.testproject.ui.FragmentsUIState
 import com.example.testproject.ui.UsersViewModel
 import com.example.testproject.ui.UsersViewModelFactory
 import javax.inject.Inject
@@ -34,24 +34,24 @@ class UserInfoFragment : Fragment(R.layout.fragment_user_info) {
 
         val progressBar = requireActivity().findViewById<ProgressBar>(R.id.info_fr_progress_bar)
 
-        vm.uiState.observe(viewLifecycleOwner) {
+        vm.fragmentsUIState.observe(viewLifecycleOwner) {
 
             when (it) {
 
-                UsersUIState.Success -> {
+                FragmentsUIState.Success -> {
                     progressBar.visibility = View.GONE
                     bindData(vm.currentUser!!)
                 }
 
-                UsersUIState.Loading -> {
+                FragmentsUIState.Loading -> {
                     progressBar.visibility = View.VISIBLE
                 }
 
-                UsersUIState.Error -> {
+                FragmentsUIState.Error -> {
                     progressBar.visibility = View.GONE
                     Toast.makeText(
                         requireContext(),
-                        UsersUIState.Error.userInfoErrorMessage,
+                        FragmentsUIState.Error.userInfoErrorMessage,
                         Toast.LENGTH_SHORT
                     ).show()
                 }

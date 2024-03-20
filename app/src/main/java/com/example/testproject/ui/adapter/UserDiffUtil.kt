@@ -3,7 +3,10 @@ package com.example.testproject.ui.adapter
 import androidx.recyclerview.widget.DiffUtil
 import com.example.testproject.data.UserLightVersion
 
-class UserDiffUtil(private val oldList: List<UserLightVersion>, private val newList: List<UserLightVersion>) :
+class UserDiffUtil(
+    private val oldList: List<UserLightVersion>,
+    private val newList: List<UserLightVersion>
+) :
     DiffUtil.Callback() {
 
     override fun getOldListSize(): Int = oldList.size

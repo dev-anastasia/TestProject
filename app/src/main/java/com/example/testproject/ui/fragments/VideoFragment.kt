@@ -12,20 +12,19 @@ import com.example.testproject.encoding
 import com.example.testproject.htmlFun
 import com.example.testproject.mimeType
 
-
 class VideoFragment : Fragment(R.layout.fragment_video) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val webView: WebView = requireActivity().findViewById(R.id.webview)
-        val customView: FrameLayout = requireActivity().findViewById(R.id.custom_view)
+        val fullscreenContainer: FrameLayout = requireActivity().findViewById(R.id.fullscreen_container)
 
         webView.apply {
             settings.javaScriptEnabled = true
             loadData(htmlFun, mimeType, encoding)
-            webViewClient = WebViewClient()
-            webChromeClient = CustomChromeClient(customView, webView)
+            webViewClient = WebViewClient()     // Для процесса загрузки страницы
+            webChromeClient = CustomChromeClient(fullscreenContainer, webView)   // Для взаимодействия после загрузки
         }
     }
 }

@@ -60,11 +60,10 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:$httpVersion")
 
     // Dagger
-    implementation("com.google.dagger:dagger:2.49")
-    implementation("com.google.dagger:dagger-android:2.16")
-    kapt("com.google.dagger:dagger-compiler:2.49")
-    kapt("com.google.dagger:dagger-android-processor:2.16")
-
-    implementation("androidx.webkit:webkit:1.10.0")
-
+    val daggerVersion = "2.49"
+    implementation("com.google.dagger:dagger:${daggerVersion}")
+    kapt("com.google.dagger:dagger-compiler:${daggerVersion}")
+    val daggerAndroidVersion = "2.16"
+    kapt("com.google.dagger:dagger-android-processor:${daggerAndroidVersion}")
+    implementation("com.google.dagger:dagger-android:${daggerAndroidVersion}")
 }
